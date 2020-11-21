@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title>hewan-hewan</title>
+        <style>
+            img{
+                width: 30%;
+                border:1px solid blue;
+            }
+        </style>
+        <script>
+            function pilih(){
+                // ambil area select id=hewan
+                let list = document.getElementById("hewan");
+                let idx = list.selectedIndex;
+                console.log("hewan pilihan anda " + list[idx].value);
+                let area_gambar = document.getElementById("gambar");
+                area_gambar.src="gambar /"+list[idx].value+".jpg";
+                alert('ini adalah gambar hewan ' + list[idx].value);
+            }
+        </script>
+    </head>
+    <body>
+        <form id="frm">
+            Pilih Hewan Favorit Anda: <select id="hewan" onchange="pilih()">
+                <option value="ikan">Ikan</option>
+                <option value="Kelinci">Kelinci</option>
+                <option value="Kuda">Kuda</option>
+                <option value="Jerapah">Jerapah</option>
+                <option value="Gajah">Gajah</option>
+            </select>
+        </form>
+        <br/>
+        <img src="gambar/ikan.jpg" alt="gambar ikan" id="gambar"/>
+
+
+    </body>
+</html>
